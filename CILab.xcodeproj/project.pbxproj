@@ -24,6 +24,7 @@
 		5EC592A22AD12BA100842781 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5EC592A52AD12BA100842781 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EC592A72AD12BA100842781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EC592AD2AD12BBB00842781 /* CILabPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CILabPackage; path = ../CILabPackage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +41,7 @@
 		5EC5928D2AD12B9F00842781 = {
 			isa = PBXGroup;
 			children = (
+				5EC592AD2AD12BBB00842781 /* CILabPackage */,
 				5EC592982AD12B9F00842781 /* CILab */,
 				5EC592972AD12B9F00842781 /* Products */,
 			);
