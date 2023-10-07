@@ -13,7 +13,18 @@
 		5EC592A12AD12B9F00842781 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EC5929F2AD12B9F00842781 /* Main.storyboard */; };
 		5EC592A32AD12BA100842781 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EC592A22AD12BA100842781 /* Assets.xcassets */; };
 		5EC592A62AD12BA100842781 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EC592A42AD12BA100842781 /* LaunchScreen.storyboard */; };
+		5EC592B52AD12C5100842781 /* CILabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC592B42AD12C5100842781 /* CILabTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5EC592B62AD12C5100842781 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5EC5928E2AD12B9F00842781 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5EC592952AD12B9F00842781;
+			remoteInfo = CILab;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5EC592962AD12B9F00842781 /* CILab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CILab.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -25,10 +36,19 @@
 		5EC592A52AD12BA100842781 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EC592A72AD12BA100842781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EC592AD2AD12BBB00842781 /* CILabPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CILabPackage; path = ../CILabPackage; sourceTree = "<group>"; };
+		5EC592B22AD12C5100842781 /* CILabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CILabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EC592B42AD12C5100842781 /* CILabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CILabTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5EC592932AD12B9F00842781 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EC592AF2AD12C5100842781 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +63,7 @@
 			children = (
 				5EC592AD2AD12BBB00842781 /* CILabPackage */,
 				5EC592982AD12B9F00842781 /* CILab */,
+				5EC592B32AD12C5100842781 /* CILabTests */,
 				5EC592972AD12B9F00842781 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				5EC592962AD12B9F00842781 /* CILab.app */,
+				5EC592B22AD12C5100842781 /* CILabTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +89,14 @@
 				5EC592A72AD12BA100842781 /* Info.plist */,
 			);
 			path = CILab;
+			sourceTree = "<group>";
+		};
+		5EC592B32AD12C5100842781 /* CILabTests */ = {
+			isa = PBXGroup;
+			children = (
+				5EC592B42AD12C5100842781 /* CILabTests.swift */,
+			);
+			path = CILabTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,6 +119,24 @@
 			productReference = 5EC592962AD12B9F00842781 /* CILab.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5EC592B12AD12C5100842781 /* CILabTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EC592B82AD12C5100842781 /* Build configuration list for PBXNativeTarget "CILabTests" */;
+			buildPhases = (
+				5EC592AE2AD12C5100842781 /* Sources */,
+				5EC592AF2AD12C5100842781 /* Frameworks */,
+				5EC592B02AD12C5100842781 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5EC592B72AD12C5100842781 /* PBXTargetDependency */,
+			);
+			name = CILabTests;
+			productName = CILabTests;
+			productReference = 5EC592B22AD12C5100842781 /* CILabTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -101,6 +149,10 @@
 				TargetAttributes = {
 					5EC592952AD12B9F00842781 = {
 						CreatedOnToolsVersion = 15.0;
+					};
+					5EC592B12AD12C5100842781 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 5EC592952AD12B9F00842781;
 					};
 				};
 			};
@@ -118,6 +170,7 @@
 			projectRoot = "";
 			targets = (
 				5EC592952AD12B9F00842781 /* CILab */,
+				5EC592B12AD12C5100842781 /* CILabTests */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +183,13 @@
 				5EC592A62AD12BA100842781 /* LaunchScreen.storyboard in Resources */,
 				5EC592A32AD12BA100842781 /* Assets.xcassets in Resources */,
 				5EC592A12AD12B9F00842781 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EC592B02AD12C5100842781 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +206,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5EC592AE2AD12C5100842781 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EC592B52AD12C5100842781 /* CILabTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5EC592B72AD12C5100842781 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5EC592952AD12B9F00842781 /* CILab */;
+			targetProxy = 5EC592B62AD12C5100842781 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5EC5929F2AD12B9F00842781 /* Main.storyboard */ = {
@@ -343,6 +419,42 @@
 			};
 			name = Release;
 		};
+		5EC592B92AD12C5100842781 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7B3ZDQVLSW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cch0074.CILabTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CILab.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CILab";
+			};
+			name = Debug;
+		};
+		5EC592BA2AD12C5100842781 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7B3ZDQVLSW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cch0074.CILabTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CILab.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CILab";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -360,6 +472,15 @@
 			buildConfigurations = (
 				5EC592AB2AD12BA100842781 /* Debug */,
 				5EC592AC2AD12BA100842781 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EC592B82AD12C5100842781 /* Build configuration list for PBXNativeTarget "CILabTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EC592B92AD12C5100842781 /* Debug */,
+				5EC592BA2AD12C5100842781 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
