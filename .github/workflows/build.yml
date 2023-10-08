@@ -10,7 +10,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Show runner info
-        run: echo ${{ runner.os }}
+        run: echo ${{ runner }}
       - name: Checkout
         uses: actions/checkout@v4
       - name: Build
