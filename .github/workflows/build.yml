@@ -9,6 +9,8 @@ jobs:
   build:
     runs-on: macos-latest
     steps:
+      - name: Show runner info
+        run: echo ${{ runner.os }}
       - name: Checkout
         uses: actions/checkout@v4
       - name: Build
