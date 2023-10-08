@@ -1,5 +1,9 @@
 name: Build
-on: push
+on:
+  push
+    branches:
+      - develop
+  workflow_dispatch:
 
 jobs:
   build:
@@ -7,5 +11,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Cancel previous runs
+        uses: styfle/cancel-workflow-actions@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
+      - name: Set up Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
       - name: Build
         run: fastlane build
+
+      - Show result
+        uses: kishikawakatsumi/xcresulttool@v1
+        with:
+          path: CILab.xcresult
+        if: success() || failure()
