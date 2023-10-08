@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5EA43C502AD354D0006C786D /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5EA43C4F2AD354D0006C786D /* FirebaseCrashlytics */; };
-		5EA43C522AD354D0006C786D /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5EA43C512AD354D0006C786D /* FirebaseRemoteConfigSwift */; };
 		5EC5929A2AD12B9F00842781 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC592992AD12B9F00842781 /* AppDelegate.swift */; };
 		5EC5929C2AD12B9F00842781 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC5929B2AD12B9F00842781 /* SceneDelegate.swift */; };
 		5EC5929E2AD12B9F00842781 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC5929D2AD12B9F00842781 /* ViewController.swift */; };
@@ -47,8 +45,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EA43C502AD354D0006C786D /* FirebaseCrashlytics in Frameworks */,
-				5EA43C522AD354D0006C786D /* FirebaseRemoteConfigSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,8 +116,6 @@
 			);
 			name = CILab;
 			packageProductDependencies = (
-				5EA43C4F2AD354D0006C786D /* FirebaseCrashlytics */,
-				5EA43C512AD354D0006C786D /* FirebaseRemoteConfigSwift */,
 			);
 			productName = CILab;
 			productReference = 5EC592962AD12B9F00842781 /* CILab.app */;
@@ -174,7 +168,6 @@
 			);
 			mainGroup = 5EC5928D2AD12B9F00842781;
 			packageReferences = (
-				5EA43C4E2AD354D0006C786D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 5EC592972AD12B9F00842781 /* Products */;
 			projectDirPath = "";
@@ -497,30 +490,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		5EA43C4E2AD354D0006C786D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.16.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		5EA43C4F2AD354D0006C786D /* FirebaseCrashlytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5EA43C4E2AD354D0006C786D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
-		};
-		5EA43C512AD354D0006C786D /* FirebaseRemoteConfigSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5EA43C4E2AD354D0006C786D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseRemoteConfigSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5EC5928E2AD12B9F00842781 /* Project object */;
 }
