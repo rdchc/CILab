@@ -20,7 +20,7 @@ platform :ios do
   lane :build do
     scan(
       build_for_testing: true,
-      destination: "name=iPhone 15 Pro,OS=17.0",
+      device: "iPhone 15",
       scheme: "CILab",
       result_bundle: true)
   end
