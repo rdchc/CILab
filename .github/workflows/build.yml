@@ -25,7 +25,7 @@ jobs:
       - name: Build
         run: fastlane build
 
-      - Show result
+      - name: Show result
         uses: kishikawakatsumi/xcresulttool@v1
         with:
           path: CILab.xcresult
