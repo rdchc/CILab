@@ -1,4 +1,4 @@
-name: Build
+name: Test suite
 on:
   push:
     branches:
@@ -9,13 +9,24 @@ jobs:
   build:
     runs-on: macos-13
     steps:
-      - name: Show runner info
-        run: echo ${{ runner }}
       - name: Checkout
         uses: actions/checkout@v4
       - name: Build
         run: fastlane build
-      - name: Show result
+        artifacts:
+          when: on_success
+          paths:
+            - build/**/*.xctest
+
+  unit_test:
+    runs-on: macos-13
+    needs: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run unit tests
+        run: fastlane unit_test
+      - name: Report test results
         uses: kishikawakatsumi/xcresulttool@v1
         with:
           path: CILab.xcresult
