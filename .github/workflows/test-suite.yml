@@ -41,14 +41,25 @@ jobs:
         run: unzip derived_data.zip -d ./
       - name: Run unit tests
         run: fastlane ci_unit_test
-      - name: Report test results
-        uses: kishikawakatsumi/xcresulttool@v1
-        with:
-          path: ./output/CILab.xcresult
       - name: Upload test results
-        if: ${{ success() }}
         uses: actions/upload-artifact@v3
         with:
           name: CILab.xcresult
           path: ./output/CILab.xcresult
           if-no-files-found: error
+
+  report:
+    name: "Report test results"
+    needs: unit_test
+    runs-on: macos-latest
+    permissions:
+      checks: write
+    steps:
+      - name: Download test results
+        uses: actions/download-artifact@v3
+        with:
+          name: CILab.xcresult
+      - name: Produce report
+        uses: kishikawakatsumi/xcresulttool@v1
+        with:
+          path: ./CILab.xcresult
