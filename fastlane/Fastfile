@@ -20,7 +20,6 @@ platform :ios do
   lane :build do
     scan(
       build_for_testing: true,
-      derived_data_path: "./derived_data",
       scheme: "CILab")
   end
 
@@ -28,8 +27,9 @@ platform :ios do
   lane :ci_build do
     scan(
       build_for_testing: true,
-      derived_data_path: "./derived_data",
-      result_bundle_path: "./builds/CILab.xcresult",
+      derived_data_path: "./output/derived_data",
+      output_directory: "./output/",
+      output_xctestrun: true,
       scheme: "CILab")
   end
 
@@ -43,7 +43,8 @@ platform :ios do
   desc "CI Run unit tests"
   lane :ci_unit_test do
     scan(
-      derived_data_path: "builds",
+      derived_data_path: "./input/derived_data",
+      result_bundle_path: "./input/CILab.xcresult",
       scheme: "CILab",
       test_without_building: true)
   end
