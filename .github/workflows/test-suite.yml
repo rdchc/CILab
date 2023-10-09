@@ -41,7 +41,7 @@ jobs:
         run: unzip ./inputs.zip -d ./input
       - name: Display structure of downloaded files
         run: ls
-        working-directory: [input, input/derived-data]
+        working-directory: input
       - name: Run unit tests
         run: fastlane ci_unit_test
       - name: Report test results
