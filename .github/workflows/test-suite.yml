@@ -14,10 +14,12 @@ jobs:
       - name: Build
         run: fastlane build
       - name: Upload test bundle
+        if: ${{ success() }}
         uses: actions/upload-artifact@v3
         with:
           name: test-bundle
           path: fastlane/test_output/CILab.xctest
+          if-no-file-found: error
 
   unit_test:
     runs-on: macos-13
