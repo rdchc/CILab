@@ -23,7 +23,7 @@ jobs:
         if: ${{ success() }}
         uses: actions/upload-artifact@v3
         with:
-          name: output.zip
+          name: artifacts.zip
           path: output.zip
 
   unit_test:
@@ -36,9 +36,9 @@ jobs:
       - name: Download inputs
         uses: actions/download-artifact@v3
         with:
-          name: inputs.zip
+          name: artifacts.zip
       - name: Unzip derived data
-        run: unzip ./inputs.zip -d ./input
+        run: unzip ./artifacts.zip -d ./input
       - name: Display structure of downloaded files
         run: ls
         working-directory: input
