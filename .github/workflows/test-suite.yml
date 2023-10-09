@@ -23,6 +23,15 @@ jobs:
           name: CILab.xcresult
           path: builds/CILab.xcresult
           if-no-files-found: error
+      - name: Zip derived data
+        if: ${{ success() }}
+        run: zip builds/derived_data.zip ./derived_data/* -r
+      - name: Upload dervied data
+        if: ${{ success() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: derived_data.zip
+          path: builds/derived_data.zip
 
   unit_test:
     name: "Run unit tests"
@@ -35,10 +44,20 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: CILab.xcresult
-          path: builds
+          path: builds/CILab.xcresult
       - name: Display structure of downloaded files
         run: ls -R
         working-directory: builds
+      - name: Download derived data
+        uses: actions/download-artifact@v3
+        with:
+          name: derived_data.zip
+          path: builds/derived_data.zip
+      - name: Unzip derived data
+        run: unzip builds/derived_data.zip -d ./derived_data
+      - name: Display derived data structure
+        run: ls -R
+        working-directory: derived_data
       - name: Run unit tests
         run: fastlane ci_unit_test
       - name: Report test results
