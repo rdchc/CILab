@@ -37,12 +37,8 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: derived_data.zip
-      - run: ls
       - name: Unzip derived data
         run: unzip derived_data.zip -d ./
-      - name: Display structure of downloaded files
-        run: ls
-        working-directory: derived_data
       - name: Run unit tests
         run: fastlane ci_unit_test
       - name: Report test results
