@@ -26,7 +26,7 @@ jobs:
       - name: Zip derived data
         if: ${{ success() }}
         run: zip builds/derived_data.zip ./derived_data/* -r
-      - name: Upload dervied data
+      - name: Upload derived data
         if: ${{ success() }}
         uses: actions/upload-artifact@v3
         with:
@@ -45,16 +45,16 @@ jobs:
         with:
           name: CILab.xcresult
           path: builds/CILab.xcresult
-      - name: Display structure of downloaded files
-        run: ls -R
-        working-directory: builds
       - name: Download derived data
         uses: actions/download-artifact@v3
         with:
           name: derived_data.zip
           path: builds/derived_data.zip
+      - name: Display structure of downloaded files
+        run: ls -R
+        working-directory: builds
       - name: Unzip derived data
-        run: unzip builds/derived_data.zip -d ./derived_data
+        run: unzip ./builds/derived_data.zip -d ./derived_data
       - name: Display derived data structure
         run: ls -R
         working-directory: derived_data
@@ -64,4 +64,3 @@ jobs:
         uses: kishikawakatsumi/xcresulttool@v1
         with:
           path: ./builds/CILab.xcresult
-        if: success() || failure()
