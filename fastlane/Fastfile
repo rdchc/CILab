@@ -20,16 +20,30 @@ platform :ios do
   lane :build do
     scan(
       build_for_testing: true,
-      result_bundle: true,
+      scheme: "CILab")
+  end
+
+  desc "CI Build for testing"
+  lane :ci_build do
+    scan(
+      build_for_testing: true,
+      derived_data_path: "builds",
+      result_bundle_path: "./builds/build.xcresult",
       scheme: "CILab")
   end
 
   desc "Run unit tests"
   lane :unit_test do
     scan(
-      derived_data_path: "build",
       scheme: "CILab",
-      test_without_building: true,
-      result_bundle: true)
+      test_without_building: true)
+  end
+
+  desc "CI Run unit tests"
+  lane :ci_unit_test do
+    scan(
+      derived_data_path: "builds",
+      scheme: "CILab",
+      test_without_building: true)
   end
 end

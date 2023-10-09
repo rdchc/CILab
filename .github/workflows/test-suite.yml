@@ -13,14 +13,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Build
-        run: fastlane build
-      - name: Upload test bundle
+        run: fastlane ci_build
+      - name: Upload result bundle
         if: ${{ success() }}
         uses: actions/upload-artifact@v3
         with:
           name: test-bundle
-          path: fastlane/test_output/CILab.xctest
-          if-no-file-found: error
+          path: builds/build.xcresult
+          if-no-files-found: error
 
   unit_test:
     name: "Run unit tests"
@@ -30,7 +30,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Run unit tests
-        run: fastlane unit_test
+        run: fastlane ci_unit_test
       - name: Report test results
         uses: kishikawakatsumi/xcresulttool@v1
         with:
