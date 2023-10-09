@@ -17,7 +17,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test-bundle
-          path: build/CILab.xctest
+          path: fastlane/test_output/CILab.xctest
 
   unit_test:
     runs-on: macos-13
