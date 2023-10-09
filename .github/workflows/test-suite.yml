@@ -48,11 +48,11 @@ jobs:
       - name: Report test results
         uses: kishikawakatsumi/xcresulttool@v1
         with:
-          path: ./builds/CILab.xcresult
+          path: ./output/CILab.xcresult
       - name: Upload test results
         if: ${{ success() }}
         uses: actions/upload-artifact@v3
         with:
           name: CILab.xcresult
-          path: ./builds/CILab.xcresult
+          path: ./output/CILab.xcresult
           if-no-files-found: error
