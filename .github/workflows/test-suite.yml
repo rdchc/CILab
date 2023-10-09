@@ -51,7 +51,7 @@ jobs:
   report:
     name: "Report test results"
     needs: unit_test
-    runs-on: macos-latest
+    runs-on: macos-13
     permissions:
       checks: write
     steps:
