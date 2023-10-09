@@ -49,7 +49,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: derived_data.zip
-          path: builds/derived_data.zip
+          path: builds
       - name: Display structure of downloaded files
         run: ls -R
         working-directory: builds
