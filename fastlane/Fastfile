@@ -27,8 +27,7 @@ platform :ios do
   lane :ci_build do
     scan(
       build_for_testing: true,
-      derived_data_path: "builds",
-      result_bundle_path: "./builds/build.xcresult",
+      result_bundle_path: "./builds/CILab.xcresult",
       scheme: "CILab")
   end
 

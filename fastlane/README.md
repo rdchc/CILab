@@ -23,6 +23,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 Build for testing
 
+### ios ci_build
+
+```sh
+[bundle exec] fastlane ios ci_build
+```
+
+CI Build for testing
+
 ### ios unit_test
 
 ```sh
@@ -30,6 +38,14 @@ Build for testing
 ```
 
 Run unit tests
+
+### ios ci_unit_test
+
+```sh
+[bundle exec] fastlane ios ci_unit_test
+```
+
+CI Run unit tests
 
 ----
 

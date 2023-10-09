@@ -16,12 +16,12 @@ jobs:
         uses: actions/checkout@v4
       - name: Build
         run: fastlane ci_build
-      - name: Upload result bundle
+      - name: Upload test bundle
         if: ${{ success() }}
         uses: actions/upload-artifact@v3
         with:
-          name: test-bundle
-          path: builds/build.xcresult
+          name: CILab.xcresult
+          path: builds/CILab.xcresult
           if-no-files-found: error
 
   unit_test:
@@ -31,10 +31,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Download test bundle
+        uses: actions/download-artifact@v3
+        with:
+          name: CILab.xcresult
+          path: builds
+      - name: Display structure of downloaded files
+        run: ls -R
+        working-directory: builds
       - name: Run unit tests
         run: fastlane ci_unit_test
       - name: Report test results
         uses: kishikawakatsumi/xcresulttool@v1
         with:
-          path: CILab.xcresult
+          path: ./builds/CILab.xcresult
         if: success() || failure()
