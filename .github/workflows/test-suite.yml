@@ -37,6 +37,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: artifacts.zip
+      - run: ls
       - name: Unzip derived data
         run: unzip ./artifacts.zip -d ./input
       - name: Display structure of downloaded files
