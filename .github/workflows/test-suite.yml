@@ -16,15 +16,15 @@ jobs:
         uses: actions/checkout@v4
       - name: Build
         run: fastlane ci_build
-      - name: Zip outputs
+      - name: Zip artifacts
         if: ${{ success() }}
-        run: zip output.zip ./output/* -r
-      - name: Upload outputs
+        run: zip artifacts.zip ./output/* -r
+      - name: Upload artifacts
         if: ${{ success() }}
         uses: actions/upload-artifact@v3
         with:
           name: artifacts.zip
-          path: output.zip
+          path: artifacts.zip
 
   unit_test:
     name: "Run unit tests"
@@ -38,7 +38,7 @@ jobs:
         with:
           name: artifacts.zip
       - run: ls
-      - name: Unzip derived data
+      - name: Unzip inputs
         run: unzip ./artifacts.zip -d ./input
       - name: Display structure of downloaded files
         run: ls
