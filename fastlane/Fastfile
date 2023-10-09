@@ -20,7 +20,7 @@ platform :ios do
   lane :build do
     scan(
       build_for_testing: true,
-      derived_data_path: "build",
+      result_bundle: true,
       scheme: "CILab")
   end
 
