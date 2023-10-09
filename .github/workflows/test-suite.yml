@@ -58,7 +58,6 @@ jobs:
         with:
           name: CILab.xcresult
           path: ./CILab.xcresult
-      - run: ls
       - name: Produce report
         uses: kishikawakatsumi/xcresulttool@v1
         with:
